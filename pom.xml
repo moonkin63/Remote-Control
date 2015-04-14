@@ -43,6 +43,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
                             <mainClass>com.github.moonkin63.rcontrol.JettyStarter</mainClass>
                         </manifest>
                     </archive>
