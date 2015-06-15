@@ -1,20 +1,41 @@
 <head>
     <title>Site</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 <script src="jquery-2.1.3.js"></script>
 <script src="fastclick.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     $(function () {
         FastClick.attach(document.body);
     });
 </script>
-<button type="button" onclick="SendMessage('space')">Space</button>
-<button type="button" onclick="SendMessage('left')">Left</button>
-<button type="button" onclick="SendMessage('up')">Up</button>
-<button type="button" onclick="SendMessage('down')">Down</button>
-<button type="button" onclick="SendMessage('right')">Right</button>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-4">
+            <button type="button" class="btn btn-primary btn-block" onclick="SendMessage('up')">Up</button>
+        </div>
+    </div>
+    <div class="row top10 ">
+        <div class="col-xs-4">
+            <button type="button" class="btn btn-primary btn-block" onclick="SendMessage('left')">Left</button>
+        </div>
+        <div class="col-xs-4">
+            <button type="button" class="btn btn-primary btn-block" onclick="SendMessage('down')">Down</button>
+        </div>
+        <div class="col-xs-4">
+            <button type="button" class="btn btn-primary btn-block" onclick="SendMessage('right')">Right</button>
+        </div>
+    </div>
+    <div class="row top10 ">
+        <div class="col-xs-12">
+            <button type="button" class="btn btn-primary btn-block" onclick="SendMessage('space')">Space</button>
+        </div>
+    </div>
+</div>
 <script type="text/javascript">
     function SendMessage(msg) {
         var ws = new WebSocket("ws://" + document.location.hostname + ":8080/api/");
